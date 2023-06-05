@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-"""This is an epty class that defines a rectangle"
+""" This is an epty class that defines a rectangle """
+
 
 class Rectangle:
     
