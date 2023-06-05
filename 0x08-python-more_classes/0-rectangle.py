@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
-""" This is an epty class that defines a rectangle """
+""" This is an empty class module """
 
 
 class Rectangle:
-    
-    """ The class is empty """
+    """ Creating an empty class that does nothing """
     pass
