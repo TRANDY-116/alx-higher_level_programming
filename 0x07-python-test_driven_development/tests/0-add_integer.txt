@@ -1,0 +1,58 @@
+Tests cases for the module 0-add_integer
+
+This module takes two integers or floats as parameters and returns the sum.
+
+Usage
+--------------------------
+
+
+Importing the function from the module
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Addiing 2 postitive integers with (a = 2, b = 3)
+	>>> add_integer(2, 3)
+	5
+
+Adding 2 integers, with a being negative and b positive (a = -2, b = 3)
+	>>> add_integer(-2, 3)
+	1
+
+Adding 2 integers, this time, a is positive and b negative
+	>>> add_integer(2, -3)
+	-1
+
+Adding 2 negeative integers (a = -2, b = -3)
+	>>> add_integer(-2, -3)
+	-5
+
+Adding a float and and integer, all positive (a = 2.1, b = 3)
+	>>> add_integer(2.1, 3)
+	5
+
+Addign an integer and a float, all positive (a = 2, b = 3.1)
+	>>> add_integer(2, 3.1)
+	5
+
+Adding a negative float and a positive integer (a = -2.1, b = 3)
+	>>> add_integer(-2.1, 3)
+	1
+
+Adding 2 floats. 1 negative and 1 positive (a = -2.1, b = 3.5)
+	>>> add_integer(-2.1, 3.5)
+	1
+
+Adding an integer and a list (a = 4, b = [2, 4, 6]
+	>>> add_integer(4, [2, 4, 6])
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+Adding a string with an integer (a = "ALXSE", b = 3)
+	>>> add_integer("ALXSE", 3)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Adding 2 integers with the second the same as the default value
+	>>> add_integer(5)
+	103
