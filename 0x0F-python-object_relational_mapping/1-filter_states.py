@@ -24,7 +24,7 @@ if __name__ == '__main__':
     # Print all rows from the fetched data
     for states in statesN:
         print(states)
-    
+
     # Close cursor
     cur.close()
 

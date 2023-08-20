@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     # connecting to a database
     db = MySQLdb.connect(host=username, port=3306, user=username,
-                         passwd=password, db=name)
+                         password=password, db=name)
 
     # Cursor addition
     cur = db.cursor()
