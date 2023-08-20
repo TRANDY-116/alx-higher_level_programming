@@ -8,7 +8,7 @@ from sys import argv
 
 # The code should not be executed when imported
 if __name__ == '__main__':
-    db = MySQLdb.connect(host=username, port=3306, user=argv[1],
+    db = MySQLdb.connect(host='localhost', port=3306, user=argv[1],
                          password=argv[2], db=argv[3])
 
     # Add cursor
