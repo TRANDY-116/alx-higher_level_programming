@@ -5,28 +5,26 @@ table of hbtn_0e_0_usa where name matches the argument
 """
 
 import MySQLdb
-from sys
+from sys import argv
 
 # The code that should be executed ehrn imported
 if __name__ == '__main__':
 
-    # Arguments
-    username = argv[1]
-    password = argv[2]
-    name = argv[3]
-    state_name = argv[4]
-
-    # connecting to a database
-    db = MySQLdb.connect(host=username, port=3306, user=username,
-                         password=password, db=name)
+    # connection to a database
+    db = MySQLdb.connect(host='localhost', port=3306, user=argv[1],
+                         password=argv[2], db=argv[3])
 
     # Cursor addition
     cur = db.cursor()
-    cur.excute("SELECT * FROM states WHERE name Like '{}'".format(state_name))
+    cur.excute("SELECT * FROM states WHERE name Like '{}'".format(argv[4]))
 
+    # Fetch query response
     state_value = cur.fetchall()
+
+    # Print out each Row
     for value in state_value:
         print(value)
 
+    # CLose Cursor and Database
     cur.close()
     db.close()
