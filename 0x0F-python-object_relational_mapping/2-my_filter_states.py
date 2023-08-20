@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     # Cursor addition
     cur = db.cursor()
-    cur.excute("SELECT * FROM states WHERE name Like '{}'".format(argv[4]))
+    cur.excute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC ".format(argv[4]))
 
     # Fetch query response
     state_value = cur.fetchall()

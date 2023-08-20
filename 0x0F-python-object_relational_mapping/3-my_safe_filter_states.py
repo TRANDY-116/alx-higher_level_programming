@@ -10,19 +10,17 @@ from sys import argv
 # The code should not be executed when imported
 
 # Arguments
-username = argv[1]
-password = argv[2]
-name = argv[3]
 if __name__ == '__main__':
-    db = MySQLdb.connect(host=username, port=3306, user=username,
-                         passwd=password, db=name)
+    db = MySQLdb.connect(host='localhost', port=3306, user=argv[1],
+                         password=argv[2], db=argv[3])
 
-    # It gives us the ability to have multiple separate working environments
-    # Via the same connection to the db
-
+    # Add cursor
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE BINARY name = %s ORDER BY id ", [argv[4]])
 
+    # Execut Query
+    cur.execute("SELECT * FROM states WHERE BINARY name = %s ORDER BY id ", (argv[4]))
+
+    # Fetch Query Response
     states = cur.fetchall()
     for state in states:
         print(state)
