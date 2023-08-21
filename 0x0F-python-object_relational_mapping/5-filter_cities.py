@@ -15,10 +15,16 @@ if __name__ = '__main__':
     cur = db.cursor()
 
     # Execution of Query
-    cur.execute("SELECT cities.id, cities.name, states.name FROM cities
-                JOIN states ON states.id = cities.states_id
-                ORDER BY cities.id")
-
+    query = """
+        SELECT cities.id, cities.name
+        FROM states
+        JOIN cities ON states.id = cities.state_id
+        WHERE states.name = %s
+        ORDER BY cities.id ASC
+        """
+        
+    cursor.execute(query, (argv[4],))
+    
     # fetch all the data returned by the query
     data = my_cursor.fetchall()
 
