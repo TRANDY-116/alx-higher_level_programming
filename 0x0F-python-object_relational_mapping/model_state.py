@@ -19,8 +19,10 @@ class State(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
 
-    engine = create_engine(
+   """
+   engine = create_engine(
             'mysql://username:password@localhost:3306/hbtn_0e_6_usa')
 
     # Cretae the tables
     Base.metadata.create_all(engine)
+    """
