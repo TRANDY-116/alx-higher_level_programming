@@ -3,10 +3,10 @@
 Script that lists all the states objects from
 the database hbtn_0e_6_usa
 """
+from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-from sys import argv
 
 if __name__ == '__main__':
 
@@ -27,8 +27,8 @@ if __name__ == '__main__':
     # Create a Session
     session = Session()
 
-    states = session.query(State).order_by(State.id).first()
-    if states is None:
+    state = session.query(State).order_by(State.id).first()
+    if state is None:
         print("Nothing")
     else:
         print("{}: {}".format(state.id, state.name))
