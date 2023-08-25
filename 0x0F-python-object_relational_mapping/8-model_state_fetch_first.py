@@ -26,12 +26,11 @@ if __name__ == '__main__':
 
     # Create a Session
     session = Session()
-    Base.metadata.create_all(engine)
 
     states = session.query(State).order_by(State.id).first()
-    if state is None:
-        print('Nothing')
+    if states is None:
+        print("Nothing")
     else:
         print("{}: {}".format(state.id, state.name))
 
-    states.close()
+    session.close()
