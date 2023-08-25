@@ -10,6 +10,10 @@ from sys import argv
 
 if __name__ == '__main__':
 
+    if len(argv) < 4:
+        print("Usuage: script.py <username> <passwd> <db_name>")
+        exit(1)
+
     # Creat an engine
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'
@@ -25,7 +29,9 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
 
     states = session.query(State).order_by(State.id).first()
-    for state in states:
+    if state is None:
+        print('Nothing')
+    else:
         print("{}: {}".format(state.id, state.name))
 
     states.close()
