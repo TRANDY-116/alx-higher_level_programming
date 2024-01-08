@@ -12,9 +12,9 @@ const c = 'C is fun';
 
 // checking the conversion
 if (!isNaN(intValue)) {
-	for (let i = 0; i < intValue; i++) {
-		console.log(c);
-	}
+  for (let i = 0; i < intValue; i++) {
+    console.log(c);
+  }
 } else {
   console.log('Missing number of occurrences');
 }
