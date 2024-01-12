@@ -19,7 +19,7 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     # Execut:Wing query
-    cur.execute("SELECT * FROM states ORDER BY states.id")
+    cur.execute("SELECT * FROM states")
 
     rows = cur.fetchall()
 
