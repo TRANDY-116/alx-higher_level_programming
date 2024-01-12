@@ -28,6 +28,6 @@ if __name__ == '__main__':
     for row in rows:
         print(row)
 
-    #Closing The cursor and The database connection
+    # Closing The cursor and The database connection
     cur.close()
     db.close()
