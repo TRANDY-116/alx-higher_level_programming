@@ -22,13 +22,14 @@ if __name__ == "__main__":
     search = argv[4]
 
     # Using ilike for case-insensitive search
-    states = session.query(State).filter(State.name.ilike(f'%{search}%')).order_by(State.id).all()
-
+    states = (
+            session.query(State)
+            .filter(State.name.ilike(f'%{search}%'))
+            .order_by(State.id).all()
+            )
     if not states:
         print("Not found")
     else:
         for state in states:
-            print("{}".format(state.id)
-
+            print("{}".format(state.id))
     session.close()
-
