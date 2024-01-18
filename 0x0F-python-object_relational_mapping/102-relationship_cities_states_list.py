@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     # Display results
     for city in cities_by_state:
-            print("{}: {} -> {}".format(city.id, city.name, city.state.name))
+        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
 
     # close the session
     session.close()
