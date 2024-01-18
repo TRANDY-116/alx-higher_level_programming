@@ -21,19 +21,19 @@ if __name__ == "__main__":
     session = Session()
 
     Base.metadata.create_all(engine)
-    
+
     def update_state_name(state_id, new_name):
-        #Query the object based on ID
+        # Query the object based on ID
         state_to_update = session.query(State).filter_by(id=state_id).first()
 
         if state_to_update:
-            #Update the name
+            # Update the name
             state_to_update.name = new_name
 
-            #commit the change
+            # commit the change
             session.commit()
 
-    #Change the name of the State where id = 2 to New Mexico
+    # Change the name of the State where id = 2 to New Mexico
     update_state_name(2, "New Mexico")
 
     session.close()
