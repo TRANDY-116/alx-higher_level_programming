@@ -11,11 +11,11 @@ if __name__ == "__main__":
         q = argv[1]
     else:
         q = ""
-    payload = {"q": q}
+    data = {"q": q}
 
     url = "http://0.0.0.0:5000/search_user"
 
-    req = requests.post(url, data=payload)
+    req = requests.post(url, data=data)
 
     try:
         response = req.json()
